@@ -9,3 +9,5 @@ CREATE OR ALTER TABLE stock_price_timeseries
     date date,
     value float
 );
+
+CALL insert_data_if_empty();

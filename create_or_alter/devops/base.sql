@@ -2,6 +2,7 @@
 
 create schema if not exists bronze;
 use schema bronze;
+EXECUTE IMMEDIATE FROM './bronze/procedures/seed_data.sql';
 EXECUTE IMMEDIATE FROM './bronze/tables/stock_price_timeseries.sql';
 
 create schema if not exists silver;
