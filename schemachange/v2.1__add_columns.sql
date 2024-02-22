@@ -1,0 +1,1 @@
+alter table foo add column bar int not null default 0;
