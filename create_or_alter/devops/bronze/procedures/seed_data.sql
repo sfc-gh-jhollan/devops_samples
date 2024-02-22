@@ -13,7 +13,7 @@ BEGIN
     IF (row_count = 0) THEN
         -- Table is empty, so insert data from the view
         INSERT INTO stock_price_timeseries
-        SELECT * FROM stock_price_view;
+        SELECT * FROM financial__economic_essentials.cybersyn.stock_price_timeseries;
         
         -- Return a message indicating data was inserted
         RETURN 'Data was inserted into stock_price_timeseries.';
