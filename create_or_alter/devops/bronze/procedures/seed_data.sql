@@ -6,11 +6,11 @@ $$
 DECLARE
     row_count INTEGER;
 BEGIN
-    -- Execute count query and store result in a variable
+    -- Get the count of rows in the table
     SELECT COUNT(*) INTO :row_count FROM stock_price_timeseries;
-    
-    -- Check if the table is empty using the variable
-    IF :row_count = 0 THEN
+
+    -- Check if the table is empty
+    IF (row_count = 0) THEN
         -- Table is empty, so insert data from the view
         INSERT INTO stock_price_timeseries
         SELECT * FROM stock_price_view;
