@@ -5,7 +5,7 @@
 ```
 use role accountadmin;
 
-create database shared_database;
+create database shared;
 
 CREATE OR REPLACE API INTEGRATION github_integration
   API_PROVIDER = git_https_api
