@@ -1,5 +1,9 @@
 # Running the sample
 
+## Pre-reqs
+- An account with git integration, templating, and create or alter PrPr
+- Installed [this dataset from the marketplace](https://app.snowflake.com/marketplace/listing/GZTSZAS2KF7/cybersyn-inc-financial-economic-essentials)
+
 ### Create a git integration with Snowflake
 
 ```
