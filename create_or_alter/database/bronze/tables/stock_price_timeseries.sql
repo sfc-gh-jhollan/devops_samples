@@ -7,8 +7,7 @@ CREATE OR ALTER TABLE stock_price_timeseries
     variable text,
     variable_name varchar(17),
     date date,
-    value float,
-    jeff text
+    value float
 );
 
 CALL insert_data_if_empty();
