@@ -1,0 +1,31 @@
+name: Deploy Snowflake Configuration Changes
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  SNOWFLAKE_CONNECTIONS_DEV_ACCOUNT: ${{ secrets.ACCOUNT }}
+  SNOWFLAKE_CONNECTIONS_DEV_USER: ${{ secrets.USER }}
+  SNOWFLAKE_CONNECTIONS_DEV_PWD: ${{ secrets.PWD }}
+  SNOWFLAKE_CONNECTIONS_DEV_DATABASE: ${{ secrets.DATABASE }}
+  SNOWFLAKE_CONNECTIONS_DEV_SCHEMA: ${{ secrets.SCHEMA }}
+  SNOWFLAKE_CONNECTIONS_DEV_WAREHOUSE: ${{ secrets.WAREHOUSE }}
+  SNOWFLAKE_CONNECTIONS_DEV_ROLE: ${{ secrets.ROLE }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Snowflake CLI
+        run: |
+          pip3 install snowflake-labs-cli
+
+      - name: Run execute immediate
+        run: |
+          snow connection test
