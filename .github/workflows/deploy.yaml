@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Install Snowflake CLI
         run: |
-          pip3 install snowflake-labs-cli
+          pip3 install snowflake-cli-labs
 
       - name: Run execute immediate
         run: |
